@@ -1,5 +1,17 @@
 package cinema.dao.impl;
 
+<<<<<<< HEAD
+import cinema.dao.AbstractDao;
+import cinema.dao.TicketDao;
+import cinema.model.Ticket;
+import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class TicketDaoImpl extends AbstractDao<Ticket> implements TicketDao {
+    public TicketDaoImpl(SessionFactory factory) {
+        super(factory, Ticket.class);
+=======
 import cinema.dao.TicketDao;
 import cinema.exception.DataProcessingException;
 import cinema.lib.Dao;
@@ -30,5 +42,6 @@ public class TicketDaoImpl implements TicketDao {
                 session.close();
             }
         }
+>>>>>>> 954b4927790b5f1b7f4e3463eaccd4b71c4fc568
     }
 }

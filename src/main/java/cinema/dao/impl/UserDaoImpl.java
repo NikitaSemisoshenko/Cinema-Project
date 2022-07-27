@@ -1,5 +1,21 @@
 package cinema.dao.impl;
 
+<<<<<<< HEAD
+import java.util.Optional;
+import cinema.dao.AbstractDao;
+import cinema.dao.UserDao;
+import cinema.exception.DataProcessingException;
+import cinema.model.User;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class UserDaoImpl extends AbstractDao<User> implements UserDao {
+    public UserDaoImpl(SessionFactory factory) {
+        super(factory, User.class);
+=======
 import cinema.dao.UserDao;
 import cinema.exception.DataProcessingException;
 import cinema.lib.Dao;
@@ -32,10 +48,20 @@ public class UserDaoImpl implements UserDao {
                 session.close();
             }
         }
+>>>>>>> 954b4927790b5f1b7f4e3463eaccd4b71c4fc568
     }
 
     @Override
     public Optional<User> findByEmail(String email) {
+<<<<<<< HEAD
+        try (Session session = factory.openSession()) {
+            Query<User> findByEmail = session.createQuery(
+                    "from User u inner join fetch u.roles where email = :email", User.class);
+            findByEmail.setParameter("email", email);
+            return findByEmail.uniqueResultOptional();
+        } catch (Exception e) {
+            throw new DataProcessingException("User with email " + email + " not found", e);
+=======
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             Query<User> query = session.createQuery("FROM User u "
                     + "WHERE u.email = :email", User.class);
@@ -43,6 +69,7 @@ public class UserDaoImpl implements UserDao {
             return query.uniqueResultOptional();
         } catch (Exception e) {
             throw new DataProcessingException("Can't find a user by email: " + email, e);
+>>>>>>> 954b4927790b5f1b7f4e3463eaccd4b71c4fc568
         }
     }
 }

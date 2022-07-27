@@ -3,7 +3,10 @@ package cinema.model;
 import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+<<<<<<< HEAD
+=======
 import javax.persistence.FetchType;
+>>>>>>> 954b4927790b5f1b7f4e3463eaccd4b71c4fc568
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,9 +20,16 @@ public class MovieSession {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+<<<<<<< HEAD
+    @ManyToOne
+    @JoinColumn(name = "movie_id")
+    private Movie movie;
+    @ManyToOne
+=======
     @ManyToOne(fetch = FetchType.LAZY)
     private Movie movie;
     @ManyToOne(fetch = FetchType.LAZY)
+>>>>>>> 954b4927790b5f1b7f4e3463eaccd4b71c4fc568
     @JoinColumn(name = "cinema_hall_id")
     private CinemaHall cinemaHall;
     @Column(name = "show_time")
@@ -63,7 +73,11 @@ public class MovieSession {
                 + "id=" + id
                 + ", movie=" + movie
                 + ", cinemaHall=" + cinemaHall
+<<<<<<< HEAD
+                + ", showTime=" + showTime + '}';
+=======
                 + ", showTime=" + showTime
                 + '}';
+>>>>>>> 954b4927790b5f1b7f4e3463eaccd4b71c4fc568
     }
 }

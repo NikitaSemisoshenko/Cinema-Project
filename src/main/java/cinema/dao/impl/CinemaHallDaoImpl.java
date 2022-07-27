@@ -1,5 +1,17 @@
 package cinema.dao.impl;
 
+<<<<<<< HEAD
+import cinema.dao.AbstractDao;
+import cinema.dao.CinemaHallDao;
+import cinema.model.CinemaHall;
+import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class CinemaHallDaoImpl extends AbstractDao<CinemaHall> implements CinemaHallDao {
+    public CinemaHallDaoImpl(SessionFactory factory) {
+        super(factory, CinemaHall.class);
+=======
 import cinema.dao.CinemaHallDao;
 import cinema.exception.DataProcessingException;
 import cinema.lib.Dao;
@@ -54,5 +66,6 @@ public class CinemaHallDaoImpl implements CinemaHallDao {
         } catch (Exception e) {
             throw new DataProcessingException("Can't get all cinema halls", e);
         }
+>>>>>>> 954b4927790b5f1b7f4e3463eaccd4b71c4fc568
     }
 }

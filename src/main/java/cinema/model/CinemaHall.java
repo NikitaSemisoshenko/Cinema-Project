@@ -44,7 +44,11 @@ public class CinemaHall {
         return "CinemaHall{"
                 + "id=" + id
                 + ", capacity=" + capacity
+<<<<<<< HEAD
+                + ", description='" + description + '\'' + '}';
+=======
                 + ", description='" + description + '\''
                 + '}';
+>>>>>>> 954b4927790b5f1b7f4e3463eaccd4b71c4fc568
     }
 }

@@ -1,5 +1,17 @@
 package cinema.dao.impl;
 
+<<<<<<< HEAD
+import cinema.dao.AbstractDao;
+import cinema.dao.MovieDao;
+import cinema.model.Movie;
+import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class MovieDaoImpl extends AbstractDao<Movie> implements MovieDao {
+    public MovieDaoImpl(SessionFactory factory) {
+        super(factory, Movie.class);
+=======
 import cinema.dao.MovieDao;
 import cinema.exception.DataProcessingException;
 import cinema.lib.Dao;
@@ -54,5 +66,6 @@ public class MovieDaoImpl implements MovieDao {
         } catch (Exception e) {
             throw new DataProcessingException("Can't get all movies", e);
         }
+>>>>>>> 954b4927790b5f1b7f4e3463eaccd4b71c4fc568
     }
 }
